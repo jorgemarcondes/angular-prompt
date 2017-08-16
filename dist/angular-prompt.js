@@ -106,39 +106,90 @@ angular.module('cgPrompt').run(['$templateCache', function($templateCache) {
   'use strict';
 
   $templateCache.put('angular-prompt.html',
-    "<div>\n" +
-    "    <div class=\"modal-header\">\n" +
-    "        <button type=\"button\" class=\"close pull-right\" ng-click=\"$dismiss()\" aria-hidden=\"true\">×</button>\n" +
-    "        <h4 class=\"modal-title\">{{options.title}}</h4>\n" +
-    "    </div>\n" +
-    "    <div class=\"modal-body\">\n" +
+    "<div>\r" +
     "\n" +
-    "        <p ng-if=\"options.message\">\n" +
-    "            {{options.message}}\n" +
-    "        </p>\n" +
+    "    <div class=\"modal-header\">\r" +
     "\n" +
-    "        <form id=\"cgPromptForm\" name=\"form.cgPromptForm\" ng-if=\"options.input\" ng-submit=\"submit()\">\n" +
-    "            <div class=\"form-group\" ng-class=\"{'has-error':cgPromptForm.$invalid && changed}\">\n" +
-    "                <label for=\"cgPromptInput\">{{options.label}}</label>\n" +
-    "                <input id=\"cgPromptInput\" type=\"text\" class=\"form-control\"  placeholder=\"{{options.label}}\" ng-model=\"input.name\" required ng-change=\"changed=true\" ng-if=\"!options.values || options.values.length === 0\"/ autofocus=\"autofocus\">\n" +
-    "                <div class=\"input-group\" ng-if=\"options.values\">\n" +
-    "                    <input id=\"cgPromptInput\" type=\"text\" class=\"form-control\" placeholder=\"{{options.label}}\" ng-model=\"input.name\" required ng-change=\"changed=true\" autofocus=\"autofocus\"/>\n" +
+    "        <button type=\"button\" class=\"close pull-right\" ng-click=\"$dismiss()\" aria-hidden=\"true\">×</button>\r" +
     "\n" +
-    "                    <div class=\"input-group-btn\" dropdown>\n" +
-    "                        <button type=\"button\" class=\"btn btn-default dropdown-toggle\" dropdown-toggle data-toggle=\"dropdown\"><span class=\"caret\"></span></button>\n" +
-    "                        <ul class=\"dropdown-menu pull-right\">\n" +
-    "                            <li ng-repeat=\"value in options.values\"><a href=\"\" ng-click=\"input.name = value\">{{value}}</a></li>\n" +
-    "                        </ul>\n" +
-    "                    </div>\n" +
-    "                </div>\n" +
-    "            </div>\n" +
-    "         </form>\n" +
+    "        <h4 class=\"modal-title\">{{options.title}}</h4>\r" +
     "\n" +
-    "    </div>\n" +
-    "    <div class=\"modal-footer\">\n" +
-    "        <button ng-repeat=\"button in options.buttons track by button.label\" class=\"btn btn-default {{button.class}}\" ng-class=\"{'btn-primary':button.primary}\" ng-click=\"buttonClicked(button)\">{{button.label}}</button>\n" +
-    "    </div>\n" +
-    "</div>"
+    "    </div>\r" +
+    "\n" +
+    "    <div class=\"modal-body\">\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "        <p ng-if=\"options.message\">\r" +
+    "\n" +
+    "            {{options.message}}\r" +
+    "\n" +
+    "        </p>\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "        <form id=\"cgPromptForm\" name=\"form.cgPromptForm\" ng-if=\"options.input\" ng-submit=\"submit()\">\r" +
+    "\n" +
+    "            <div class=\"form-group\" ng-class=\"{'has-error':cgPromptForm.$invalid && changed}\">\r" +
+    "\n" +
+    "                <label for=\"cgPromptInput\">{{options.label}}</label>\r" +
+    "\n" +
+    "                <textarea \r" +
+    "\n" +
+    "                    id=\"cgPromptInput\" \r" +
+    "\n" +
+    "                    class=\"form-control\"  \r" +
+    "\n" +
+    "                    placeholder=\"{{options.label}}\" \r" +
+    "\n" +
+    "                    ng-model=\"input.name\" \r" +
+    "\n" +
+    "                    required \r" +
+    "\n" +
+    "                    ng-change=\"changed=true\" \r" +
+    "\n" +
+    "                    ng-if=\"!options.values || options.values.length === 0\"\r" +
+    "\n" +
+    "                    autofocus=\"autofocus\">\r" +
+    "\n" +
+    "                </textarea>\r" +
+    "\n" +
+    "                <div class=\"input-group\" ng-if=\"options.values\">\r" +
+    "\n" +
+    "                    <input id=\"cgPromptInput\" type=\"text\" class=\"form-control\" placeholder=\"{{options.label}}\" ng-model=\"input.name\" required ng-change=\"changed=true\" autofocus=\"autofocus\"/>\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "                    <div class=\"input-group-btn\" dropdown>\r" +
+    "\n" +
+    "                        <button type=\"button\" class=\"btn btn-default dropdown-toggle\" dropdown-toggle data-toggle=\"dropdown\"><span class=\"caret\"></span></button>\r" +
+    "\n" +
+    "                        <ul class=\"dropdown-menu pull-right\">\r" +
+    "\n" +
+    "                            <li ng-repeat=\"value in options.values\"><a href=\"\" ng-click=\"input.name = value\">{{value}}</a></li>\r" +
+    "\n" +
+    "                        </ul>\r" +
+    "\n" +
+    "                    </div>\r" +
+    "\n" +
+    "                </div>\r" +
+    "\n" +
+    "            </div>\r" +
+    "\n" +
+    "         </form>\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "    </div>\r" +
+    "\n" +
+    "    <div class=\"modal-footer\">\r" +
+    "\n" +
+    "        <button ng-repeat=\"button in options.buttons track by button.label\" class=\"btn btn-default {{button.class}}\" ng-class=\"{'btn-primary':button.primary}\" ng-click=\"buttonClicked(button)\">{{button.label}}</button>\r" +
+    "\n" +
+    "    </div>\r" +
+    "\n" +
+    "</div>\r" +
+    "\n"
   );
 
 }]);
